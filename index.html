@@ -1245,13 +1245,17 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 // ══════════════════════════════════════
 function revealEmail(e){
   e.preventDefault();
-  var u='sahilshankar431',d='gmail.com';
-  var addr=u+'@'+d;
-  var btn=document.getElementById('email-btn');
-  var rev=document.getElementById('email-reveal');
-  if(btn){btn.href='mailto:'+addr;btn.onclick=null;}
-  if(rev){rev.href='mailto:'+addr;rev.textContent=addr;rev.onclick=null;}
-  window.location.href='mailto:'+addr;
+  var email = 'sahilshankar431@gmail.com';
+  var subject = 'Hello from your portfolio';
+  var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(email) + '&su=' + encodeURIComponent(subject);
+  window.open(gmailUrl, '_blank');
+  var btn = document.getElementById('email-btn');
+  var rev = document.getElementById('email-reveal');
+  if(btn) btn.href = 'mailto:' + email;
+  if(rev) {
+    rev.href = 'mailto:' + email;
+    rev.textContent = email;
+  }
 }
 </script>
 </body>
